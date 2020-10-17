@@ -1,7 +1,8 @@
 import React from 'react';
+import JumbotronContainer from "./containers/jumbotron/jumbotron";
 
-export default function App() {
+export function App() {
   return (
-    <p>HELLO</p>
+    <JumbotronContainer></JumbotronContainer>
   );
 }
