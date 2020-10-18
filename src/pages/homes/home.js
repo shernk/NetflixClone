@@ -1,6 +1,6 @@
 import React from "react";
-import JumbotronContainer from "../../containers/jumbotron";
-import AccordionContainer from "../../containers/accordion";
+import JumbotronContainer from "../../containers/jumbotron/jumbotron";
+import AccordionContainer from "../../containers/accordion/accordion";
 
 export default function Home() {
   return (
