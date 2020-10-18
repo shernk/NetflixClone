@@ -7,6 +7,7 @@ export const Container = styled.div`
 
 export const Frame = styled.div`
   margin-bottom: 40px;
+  margin-top: 40px;
 `;
 
 export const Inner = styled.div`
@@ -36,17 +37,13 @@ export const Item = styled.div`
   margin: auto;
   max-width: 670px;
   width: 100%;
-
-  &:first-of-type {
-    margin-top: 3em;
-  }
 `;
 
 export const Header = styled.div`
   display: flex;
   justify-content: space-between;
   cursor: pointer;
-  margin-bottom: 1px;
+  margin-top: 1px;
   font-size: 26px;
   font-weight: normal;
   background: #303030;
