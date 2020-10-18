@@ -41,7 +41,7 @@ Accordion.Header = function AccordionHeader({ children, ...restProps }) {
   const { toggleShow, setToggleShow } = useContext(ToggleContext);
 
   return (
-    <Header onClick={() => setToggleShow(!toggleShow)} {...restProps}>
+    <Header onClick={() => setToggleShow((toggleShow) => !toggleShow)} {...restProps}>
       {children}
       {toggleShow ? (
         <img src="/images/icons/close-slim.png" alt="Close" />
