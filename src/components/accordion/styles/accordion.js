@@ -33,7 +33,6 @@ export const Title = styled.h1`
 
 export const Item = styled.div`
   color: white;
-  margin-bottom: 10px;
   margin: auto;
   max-width: 670px;
   width: 100%;
@@ -69,6 +68,7 @@ export const Body = styled.div`
   max-height: 1200px;
   transition: max-height 0.25s cubic-bezier(0.5, 0, 0.1, 1);
   font-size: 26px;
+  margin-bottom: 2px;
   font-weight: normal;
   line-height: normal;
   background: #303030;
