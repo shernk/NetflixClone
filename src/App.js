@@ -7,7 +7,7 @@ import SignIn from "./pages/signin/signin";
 export function App() {
   return (
     <Router>
-      <Route exact path={ROUTES.SIGNIN}>
+      <Route exact path={ROUTES.SIGN_IN}>
         <SignIn />
       </Route>
       <Route exact path={ROUTES.HOME}>

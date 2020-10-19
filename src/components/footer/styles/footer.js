@@ -10,13 +10,13 @@ export const Container = styled.div`
   @media (max-width: 1000px) {
     padding: 70px 30px;
   }
-`;
-
-export const Column = styled.div`
+  `;
+  
+  export const Column = styled.div`
   display: flex;
   flex-direction: column;
   text-align: left;
-`;
+  `;
 
 export const Row = styled.div`
   display: grid;
@@ -33,6 +33,10 @@ export const Link = styled.a`
   margin-bottom: 20px;
   font-size: 13px;
   text-decoration: none;
+
+  &:hover {
+    color: white;
+  }
 `;
 
 export const Title = styled.p`
