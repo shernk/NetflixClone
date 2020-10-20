@@ -33,7 +33,7 @@ export const Title = styled.h1`
 
 export const Item = styled.div`
   color: white;
-  margin: 1px auto;
+  margin: 10px auto;
   max-width: 670px;
   width: 100%;
 `;
@@ -42,6 +42,7 @@ export const Header = styled.div`
   display: flex;
   justify-content: space-between;
   cursor: pointer;
+  margin-bottom: 1px;
   font-size: 26px;
   font-weight: normal;
   background: #303030;
