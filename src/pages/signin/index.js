@@ -3,7 +3,7 @@ import {useHistory} from 'react-router-dom';
 import {FirebaseContext} from '../../context/firebase';
 import * as ROUTES from '../../routes/routes';
 
-export function Sign_In(){
+
   const history = useHistory();
   const { firebase } = useContext(FirebaseContext);
 
@@ -13,7 +13,8 @@ export function Sign_In(){
 
   const isInvalid = password === "" || emailAddress === "";
 
-  const handleSignin = (event) => {
+
+export function handleSignin(event) {
     event.preventDefault();
 
     return firebase
@@ -28,4 +29,3 @@ export function Sign_In(){
         setError(error.message);
       });
   };
-}

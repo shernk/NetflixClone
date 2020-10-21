@@ -1,34 +1,61 @@
-import React from 'react';
+import React, {useState, useContext} from 'react';
 import {HeaderContainer} from "../../containers/header/header";
 import {FooterContainer} from "../../containers/footer/footer";
-import {Sign_In} from './index';
+import {FirebaseContext} from '../../context/firebase';
+import {useHistory} from 'react-router-dom';
 import {Form} from '../../components';
+import * as ROUTES from '../../routes/routes';
 
 export default function SignIn(){
+  const history = useHistory();
+  const { firebase } = useContext(FirebaseContext);
+
+  const [emailAddress, setEmailAddress] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+
+  const isInvalid = password === "" || emailAddress === "";
+
+  const handleSignin = (event) => {
+    event.preventDefault();
+
+    return firebase
+      .auth()
+      .signInWithEmailAndPassword(emailAddress, password)
+      .then(() => {
+        history.push(ROUTES.BROWSE);
+      })
+      .catch((error) => {
+        setEmailAddress("");
+        setPassword("");
+        setError(error.message);
+      });
+  };
+
   return (
     <>
       <HeaderContainer>
         <Form>
           <Form.Title>Sign In</Form.Title>
-          {Sign_In.error && (
-            <Form.Error data-testid="error">{Sign_In.error}</Form.Error>
+          {error && (
+            <Form.Error data-testid="error">{error}</Form.Error>
           )}
 
-          <Form.Base onSubmit={Sign_In.handleSignin} method="POST">
+          <Form.Base onSubmit={handleSignin} method="POST">
             <Form.Input
               placeholder="Email address"
-              value={Sign_In.emailAddress}
-              onChange={({ target }) => Sign_In.setEmailAddress(target.value)}
+              value={emailAddress}
+              onChange={({ target }) => setEmailAddress(target.value)}
             />
             <Form.Input
               type="password"
-              value={Sign_In.password}
+              value={password}
               autoComplete="off"
               placeholder="Password"
-              onChange={({ target }) => Sign_In.setPassword(target.value)}
+              onChange={({ target }) => setPassword(target.value)}
             />
             <Form.Submit
-              disabled={Sign_In.isInvalid}
+              disabled={isInvalid}
               type="submit"
               data-testid="sign-in"
             >
