@@ -7,9 +7,10 @@ import SignIn from "./pages/signin/signin";
 import SignUp from "./pages/signup/signup";
 import {IsUserRedirect} from './routes/user-redirect';
 import {ProtectedRoute} from './routes/protected-route';
+import {useAuthListener} from './hooks/index';
 
 export function App() {
-    const user = {};
+  const { user } = useAuthListener();
 
   return (
     <Router>
@@ -18,6 +19,7 @@ export function App() {
           user={user}
           loggedInPath={ROUTES.BROWSE}
           path={ROUTES.SIGN_IN}
+          exact
         >
           <SignIn />
         </IsUserRedirect>
@@ -25,6 +27,7 @@ export function App() {
           user={user}
           loggedInPath={ROUTES.BROWSE}
           path={ROUTES.SIGN_UP}
+          exact
         >
           <SignUp />
         </IsUserRedirect>
