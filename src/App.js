@@ -9,7 +9,7 @@ import {IsUserRedirect} from './routes/user-redirect';
 import {ProtectedRoute} from './routes/protected-route';
 
 export function App() {
-    const { user } = {};
+    const user = null;
 
   return (
     <Router>
