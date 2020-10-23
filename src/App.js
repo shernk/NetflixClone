@@ -9,7 +9,7 @@ import {IsUserRedirect} from './routes/user-redirect';
 import {ProtectedRoute} from './routes/protected-route';
 
 export function App() {
-    const user = null;
+    const user = {};
 
   return (
     <Router>
@@ -32,10 +32,14 @@ export function App() {
           user={user}
           loggedInPath={ROUTES.BROWSE}
           path={ROUTES.HOME}
+          exact
         >
           <Home />
         </IsUserRedirect>
-        <ProtectedRoute user={user} path={ROUTES.BROWSE}>
+        <ProtectedRoute 
+          user={user}
+          path={ROUTES.BROWSE}
+        >
           <Browse />
         </ProtectedRoute>
       </Switch>

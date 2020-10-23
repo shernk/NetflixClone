@@ -9,10 +9,10 @@ export function ProtectedRoute({user, children, ...rest}){
         if(user){
           return children;
         }
-
+        
         if(!user){
           return(
-            <Redirect 
+            <Redirect
               to={{
                 pathname: 'signin',
                 state: {from: location} 
