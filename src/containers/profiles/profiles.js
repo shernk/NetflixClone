@@ -3,7 +3,7 @@ import { Header, Profiles } from "../../components";
 import * as ROUTES from "../../routes/routes";
 import logo from "../../logo.svg";
 
-export function ProfileContainer({ user, setProfile }) {
+export function ProfilesContainer({ user, setProfile }) {
   return (
     <>
       <Header bg={false}>
