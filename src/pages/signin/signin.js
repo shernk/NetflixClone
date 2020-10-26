@@ -1,5 +1,5 @@
 import React, {useState, useContext} from 'react';
-import {HeaderContainer} from "../../containers/header/header";
+import {Header} from "../../components/index";
 import {FooterContainer} from "../../containers/footer/footer";
 import {FirebaseContext} from '../../context/firebase';
 import {useHistory} from 'react-router-dom';
@@ -34,7 +34,7 @@ export default function SignIn(){
 
   return (
     <>
-      <HeaderContainer>
+      <Header>
         <Form>
           <Form.Title>Sign In</Form.Title>
           {error && (
@@ -71,7 +71,7 @@ export default function SignIn(){
             bot. Learn more.
           </Form.TextSmall>
         </Form>
-      </HeaderContainer>
+      </Header>
       <FooterContainer></FooterContainer>
     </>
   );

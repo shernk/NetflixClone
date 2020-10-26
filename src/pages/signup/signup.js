@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import { Form } from "../../components";
 import * as ROUTES from "../../routes/routes";
-import { HeaderContainer } from "../../containers/header/header";
+import { Header } from "../../components/index";
 import { FooterContainer } from "../../containers/footer/footer";
 import { FirebaseContext } from "../../context/firebase";
 
@@ -43,7 +43,7 @@ export default function SignUp(){
 
   return (
     <>
-      <HeaderContainer>
+      <Header>
         <Form>
           <Form.Title>Sign Up</Form.Title>
           {error && <Form.Error>{error}</Form.Error>}
@@ -83,7 +83,7 @@ export default function SignUp(){
             bot. Learn more.
           </Form.TextSmall>
         </Form>
-      </HeaderContainer>
+      </Header>
       <FooterContainer></FooterContainer>
     </>
   );
