@@ -1,17 +1,23 @@
 import React, { useContext, useState, useEffect } from "react";
 import { ProfilesContainer } from "../profiles/profiles";
 import { FirebaseContext } from "../../context/firebase";
-import { Header ,Loading } from "../../components/index";
+import { Header ,Loading,Card } from "../../components/index";
 import {FooterContainer} from '../../containers/footer/footer';
 import * as ROUTES from '../../routes/routes';
 import logo from '../../logo.svg';
 
 export function BrowseContainer({ slides }) {
+  const { firebase } = useContext(FirebaseContext);
+
   const [profile, setProfile] = useState({});
   const [category, setCategory] = useState('series');
+
+  //TODO: the title of each category don't display
+  const [slidesRows, setSlideRows] = useState(setCategory);
+  
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
-  const { firebase } = useContext(FirebaseContext);
+
   const user = firebase.auth().currentUser || {};
 
   useEffect(() => {
@@ -74,6 +80,14 @@ export function BrowseContainer({ slides }) {
           <Header.PlayButton>Play</Header.PlayButton>
         </Header.Feature>
       </Header>
+
+      <Card.Group>
+        {slidesRows.map((slideItem) => (
+          <Card key={`${category}-${slideItem.title.toLowerCase()}`}>
+            <Card.Title>{slideItem.title}</Card.Title>
+          </Card>
+        ))}
+      </Card.Group>
 
       <FooterContainer />
     </>
