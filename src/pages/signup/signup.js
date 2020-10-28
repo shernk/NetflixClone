@@ -5,6 +5,7 @@ import * as ROUTES from "../../routes/routes";
 import { Header } from "../../components/index";
 import { FooterContainer } from "../../containers/footer/footer";
 import { FirebaseContext } from "../../context/firebase";
+import logo from '../../logo.svg';
 
 export default function SignUp(){
   const history = useHistory();
@@ -44,6 +45,9 @@ export default function SignUp(){
   return (
     <>
       <Header>
+        <Header.Frame>
+          <Header.Logo src={logo} to={ROUTES.HOME} alt="Netflix" />
+        </Header.Frame>
         <Form>
           <Form.Title>Sign Up</Form.Title>
           {error && <Form.Error>{error}</Form.Error>}

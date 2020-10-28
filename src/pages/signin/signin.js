@@ -5,6 +5,7 @@ import {FirebaseContext} from '../../context/firebase';
 import {useHistory} from 'react-router-dom';
 import {Form} from '../../components';
 import * as ROUTES from '../../routes/routes';
+import logo from '../../logo.svg';
 
 export default function SignIn(){
   const history = useHistory();
@@ -30,11 +31,14 @@ export default function SignIn(){
         setPassword("");
         setError(error.message);
       });
-  };
-
-  return (
-    <>
+    };
+    
+    return (
+      <>
       <Header>
+        <Header.Frame>
+          <Header.Logo src={logo} to={ROUTES.HOME} alt='Netflix'/>
+        </Header.Frame>
         <Form>
           <Form.Title>Sign In</Form.Title>
           {error && (
@@ -46,19 +50,19 @@ export default function SignIn(){
               placeholder="Email address"
               value={emailAddress}
               onChange={({ target }) => setEmailAddress(target.value)}
-            />
+              />
             <Form.Input
               type="password"
               value={password}
               autoComplete="off"
               placeholder="Password"
               onChange={({ target }) => setPassword(target.value)}
-            />
+              />
             <Form.Submit
               disabled={isInvalid}
               type="submit"
               data-testid="sign-in"
-            >
+              >
               Sign In
             </Form.Submit>
           </Form.Base>
