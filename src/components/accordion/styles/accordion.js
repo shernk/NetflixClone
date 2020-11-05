@@ -43,7 +43,7 @@ export const Header = styled.div`
   justify-content: space-between;
   cursor: pointer;
   padding: 0.8em 1.2em 0.8em 1.2em;
-  margin-bottom: 1px;
+  margin-bottom: 2px;
   position: relative;
   border: 0;
   font-size: 26px;
