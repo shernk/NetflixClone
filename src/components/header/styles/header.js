@@ -4,21 +4,26 @@ import { Link as ReachRouterLink } from "react-router-dom";
 export const Background = styled.div`
   display: flex;
   flex-direction: column;
-  background: url(${({ src }) =>
-      src ? `../images/misc/${src}.jpg` : "../images/misc/home-bg.jpg"})
-    top left / cover no-repeat;
-
-  @media (max-width: 1100px) {
-    ${({ dontShowOnSmallViewPort }) =>
-      dontShowOnSmallViewPort && `background: none;`}
-  }
+  background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.35),
+      rgba(0, 0, 0, 0.1),
+      rgba(0, 0, 0, 0.35)
+    ),
+    url(${({ src }) =>
+        src ? `../images/misc/${src}.jpg` : "../images/misc/home-bg.jpg"})
+      top left / cover no-repeat;
+      
+    @media (max-width: 1100px) {
+      ${({ dontShowOnSmallViewPort }) =>
+        dontShowOnSmallViewPort && `background: none;`}
+    }
 `;
 
 export const Container = styled.div`
   display: flex;
   margin: 0 56px;
-  height: 64px;
-  padding: 18px 0;
+  height: 100px;
   justify-content: space-between;
   align-items: center;
 
@@ -28,6 +33,11 @@ export const Container = styled.div`
 
   @media (max-width: 1000px) {
     margin: 0 30px;
+  }
+
+  @media (max-width 990px) {
+    height: 100%;
+    width: 100%;
   }
 `;
 
@@ -59,15 +69,23 @@ export const SearchInput = styled.input`
   transition: width 0.5s;
   height: 30px;
   font-size: 14px;
+  border-radius: 4px;
   margin-left: ${({ active }) => (active === true ? "10px" : "0")};
   padding: ${({ active }) => (active === true ? "0 10px" : "0")};
   opacity: ${({ active }) => (active === true ? "1" : "0")};
   width: ${({ active }) => (active === true ? "200px" : "0px")};
+
+  &:focus {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
 `;
 
 export const Search = styled.div`
   display: flex;
   align-items: center;
+  outline: 0;
+  padding: 0;
+  justify-content: center;
 
   svg {
     color: white;
@@ -102,7 +120,6 @@ export const ButtonLink = styled(ReachRouterLink)`
   padding: 8px 17px;
   cursor: pointer;
   text-decoration: none;
-  box-sizing: border-box;
 
   &:hover {
     background: #f40612;
@@ -138,7 +155,7 @@ export const Dropdown = styled.div`
       margin-bottom: 0;
     }
 
-    ${Link}, ${Picture} {
+    ${Link} {
       cursor: default;
     }
   }
