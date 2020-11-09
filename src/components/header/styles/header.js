@@ -34,11 +34,6 @@ export const Container = styled.div`
   @media (max-width: 1000px) {
     margin: 0 30px;
   }
-
-  @media (max-width 990px) {
-    height: 100%;
-    width: 100%;
-  }
 `;
 
 export const Link = styled.p`
