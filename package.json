@@ -12,13 +12,13 @@
     "fuse.js": "^6.4.1",
     "invariant": "^2.2.4",
     "levenary": "^1.1.1",
+    "node-modules": "^1.0.1",
     "normalize.css": "^8.0.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "^4.0.0",
-    "styled-components": "^5.2.0",
-    "yarn": "^1.22.10"
+    "styled-components": "^5.2.0"
   },
   "scripts": {
     "start": "react-scripts start",

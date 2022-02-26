@@ -9,8 +9,8 @@ import { FirebaseContext } from "./context/firebase";
 render(
   <React.StrictMode>
     <FirebaseContext.Provider value={{ firebase }}>
-    <GlobalStyles />
-    <App />
+      <GlobalStyles />
+      <App />
     </FirebaseContext.Provider>
   </React.StrictMode>,
   document.getElementById("root")
