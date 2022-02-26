@@ -11,7 +11,7 @@ import {useAuthListener} from './hooks/index';
 
 export function App() {
   const { user } = useAuthListener();
-
+  
   return (
     <Router>
       <Switch>

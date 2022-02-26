@@ -4,6 +4,7 @@ import * as ROUTES from "../../routes/routes";
 import logo from "../../logo.svg";
 
 export function ProfilesContainer({ user, setProfile }) {
+  console.log('user', user);
   return (
     <>
       <Header bg={false}>

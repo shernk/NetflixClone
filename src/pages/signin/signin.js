@@ -76,7 +76,7 @@ export default function SignIn(){
           </Form.TextSmall>
         </Form>
       </Header>
-      <FooterContainer></FooterContainer>
+      <FooterContainer />
     </>
   );
 }
