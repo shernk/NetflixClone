@@ -12,7 +12,7 @@ export const Title = styled.p`
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 
   > ${Title} {
     @media (max-width: 1000px) {
@@ -147,10 +147,11 @@ export const Feature = styled.div`
   background-position-x: right;
   background-repeat: no-repeat;
   background-color: black;
-
+  margin: 10px 56px 0px 56px;
   @media (max-width: 1000px) {
     height: auto;
     background-size: auto;
+    margin: 10px 30px 0px 30px;
 
     ${Title} {
       font-size: 20px;
