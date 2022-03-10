@@ -28,9 +28,9 @@ export default function Home() {
         </Feature>
       </HeaderContainer>
 
-      <JumbotronContainer></JumbotronContainer>
-      <AccordionContainer></AccordionContainer>
-      <FooterContainer></FooterContainer>
+      <JumbotronContainer />
+      <AccordionContainer />
+      <FooterContainer />
     </>
   );
 }
