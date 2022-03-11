@@ -12,8 +12,8 @@ export default function SignIn() {
     error,
     isInvalid,
     emailAddress,
-    setEmailAddress,
     password,
+    setEmailAddress,
     setPassword,
     handleSignin,
   } = useHandleSignIn();

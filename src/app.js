@@ -9,7 +9,7 @@ import {IsUserRedirect} from './routes/user-redirect';
 import {ProtectedRoute} from './routes/protected-route';
 import {useAuthListener} from './hooks/index';
 
-export function App() {
+export const App = () => {
   const { user } = useAuthListener();
   
   return (
