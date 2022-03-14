@@ -3,7 +3,7 @@ import * as ROUTES from "../../routes/routes";
 import { Header } from "../../components/index";
 import { FooterContainer } from "../../containers/footer/footer";
 import logo from "../../logo.svg";
-import useHandleSignUp from "./handlesignup";
+import useHandleSignUp from "../../hooks/handlesignup";
 
 export default function SignUp() {
   const {

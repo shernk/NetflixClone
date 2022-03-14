@@ -1,24 +1,37 @@
-import React from 'react';
-import { Redirect, Route } from 'react-router-dom';
+import React from "react";
+import { Redirect, Route } from "react-router-dom";
 
-export function ProtectedRoute({user, children, ...rest}){
-  return(
-    <Route 
+function redirectRoute(location) {
+  return (
+    <Redirect
+      to={{
+        pathname: "signin",
+        state: { from: location },
+      }}
+    />
+  );
+}
+
+export default function ProtectedRoute({ user, path, ...rest }) {
+  return (
+    <Route
       {...rest}
       render={({ location }) => {
-        if(user){
-          return children;
+        if (user) {
+          return path;
         }
-        
-        if(!user){
-          return(
-            <Redirect
-              to={{
-                pathname: 'signin',
-                state: {from: location} 
-              }}
-            />
-          );
+
+        if (!user) {
+          console.log("location: ", location);
+          return redirectRoute(location);
+          // (
+          //   <Redirect
+          //     to={{
+          //       pathname: "signin",
+          //       state: { from: location },
+          //     }}
+          //   />
+          // );
         }
 
         return null;
